@@ -1,23 +1,45 @@
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles, Zap, Target, TrendingUp, Users, Brain, Clock, BarChart, Rocket } from "lucide-react";
+import { useEffect } from "react";
+import Orb from "@/components/Orb";
 
 const Index = () => {
+  // SEO: Update meta description dynamically
+  useEffect(() => {
+    document.title = "IA para Empresários | Domine o Mercado com Inteligência Artificial";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Empresários inteligentes já estão usando IA para vender mais, automatizar processos e multiplicar resultados. Entre para a comunidade exclusiva que domina o mercado com IA."
+      );
+    }
+  }, []);
+
   const handleCTA = () => {
     window.scrollTo({ top: document.getElementById('pricing')?.offsetTop || 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <main className="min-h-screen bg-background text-foreground overflow-x-hidden" role="main">
       
       {/* SEÇÃO 1 - HERO */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden" aria-labelledby="hero-heading">
+        {/* Orb Background */}
+        <div className="absolute inset-0 opacity-40">
+          <Orb 
+            hue={0}
+            hoverIntensity={0.3}
+            rotateOnHover={true}
+            forceHoverState={false}
+          />
+        </div>
+        
         {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-radial-gold opacity-30 blur-3xl"></div>
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/10 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gold/10 rounded-full blur-[100px]"></div>
+        <div className="absolute inset-0 bg-gradient-radial-gold opacity-20 blur-3xl"></div>
         
         <div className="relative z-10 max-w-5xl mx-auto text-center animate-fade-in">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
+          <h1 id="hero-heading" className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
             Se você não usar IA <span className="text-gold">AGORA</span>,<br />
             alguém que usa vai tomar seu mercado.
           </h1>
@@ -32,6 +54,7 @@ const Index = () => {
             variant="premium" 
             size="xl" 
             className="text-xl uppercase tracking-wider animate-scale-in"
+            aria-label="Entrar para a comunidade de IA para empresários"
           >
             Quero entrar agora
           </Button>
@@ -229,7 +252,13 @@ const Index = () => {
                 <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Comunidade exclusiva</li>
                 <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Conteúdos práticos</li>
               </ul>
-              <Button variant="premiumOutline" size="lg" className="w-full" onClick={handleCTA}>
+              <Button 
+                variant="premiumOutline" 
+                size="lg" 
+                className="w-full" 
+                onClick={handleCTA}
+                aria-label="Assinar plano Essencial - R$ 49 por mês"
+              >
                 Começar Agora
               </Button>
             </div>
@@ -250,7 +279,13 @@ const Index = () => {
                 <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Tutoriais completos</li>
                 <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Materiais exclusivos</li>
               </ul>
-              <Button variant="premium" size="lg" className="w-full" onClick={handleCTA}>
+              <Button 
+                variant="premium" 
+                size="lg" 
+                className="w-full" 
+                onClick={handleCTA}
+                aria-label="Assinar plano Completo - R$ 97 por mês (Mais Popular)"
+              >
                 Quero Este Agora
               </Button>
             </div>
@@ -268,7 +303,13 @@ const Index = () => {
                 <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Análises de caso</li>
                 <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Suporte prioritário</li>
               </ul>
-              <Button variant="premiumOutline" size="lg" className="w-full" onClick={handleCTA}>
+              <Button 
+                variant="premiumOutline" 
+                size="lg" 
+                className="w-full" 
+                onClick={handleCTA}
+                aria-label="Assinar plano Premium VIP - R$ 297 por mês"
+              >
                 Quero VIP
               </Button>
             </div>
@@ -280,6 +321,7 @@ const Index = () => {
               size="xl" 
               className="text-xl uppercase tracking-wider shadow-glow-gold"
               onClick={handleCTA}
+              aria-label="Entrar na comunidade e acelerar resultados com IA"
             >
               Quero entrar agora e acelerar meus resultados
             </Button>
@@ -289,7 +331,17 @@ const Index = () => {
 
       {/* SEÇÃO 9 - FECHAMENTO */}
       <section className="py-32 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-radial-gold opacity-20 blur-3xl"></div>
+        {/* Orb Background */}
+        <div className="absolute inset-0 opacity-30">
+          <Orb 
+            hue={0}
+            hoverIntensity={0.4}
+            rotateOnHover={true}
+            forceHoverState={false}
+          />
+        </div>
+        
+        <div className="absolute inset-0 bg-gradient-radial-gold opacity-10 blur-3xl"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
@@ -308,12 +360,13 @@ const Index = () => {
             size="xl" 
             className="text-xl uppercase tracking-wider shadow-glow-gold animate-pulse"
             onClick={handleCTA}
+            aria-label="Decisão final - Entrar para a comunidade IA agora"
           >
             Entrar agora
           </Button>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 
