@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Check, Sparkles, Zap, Target, TrendingUp, Users, Brain, Clock, BarChart, Rocket } from "lucide-react";
 import { useEffect } from "react";
 import Orb from "@/components/Orb";
+import { useParallax } from "@/hooks/use-parallax";
+import { FloatingParticles } from "@/components/FloatingParticles";
 
 const Index = () => {
   // SEO: Update meta description dynamically
@@ -16,29 +18,76 @@ const Index = () => {
     }
   }, []);
 
+  // Parallax effects
+  const parallaxSlow = useParallax(0.15);
+  const parallaxMedium = useParallax(0.3);
+  const parallaxFast = useParallax(0.5);
+
   const handleCTA = () => {
     window.scrollTo({ top: document.getElementById('pricing')?.offsetTop || 0, behavior: 'smooth' });
   };
 
   return (
-    <main className="min-h-screen bg-background text-foreground overflow-x-hidden" role="main">
+    <>
+      {/* Partículas Flutuantes */}
+      <FloatingParticles />
       
-      {/* SEÇÃO 1 - HERO */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden" aria-labelledby="hero-heading">
-        {/* Orb Background */}
-        <div className="absolute inset-0 opacity-40">
+      {/* Background Parallax Fixo - Sempre Visível */}
+      <div className="fixed inset-0 z-0">
+        {/* Layer 1 - Orb Principal (fundo) */}
+        <div className="absolute inset-0 opacity-25">
           <Orb 
             hue={0}
+            hoverIntensity={0.2}
+            rotateOnHover={false}
+            forceHoverState={false}
+          />
+        </div>
+        
+        {/* Layer 2 - Orb Secundário (meio) */}
+        <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] opacity-20">
+          <Orb 
+            hue={10}
             hoverIntensity={0.3}
             rotateOnHover={true}
             forceHoverState={false}
           />
         </div>
         
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-radial-gold opacity-20 blur-3xl"></div>
+        {/* Layer 3 - Orb Terciário (detalhe) */}
+        <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] opacity-15">
+          <Orb 
+            hue={-10}
+            hoverIntensity={0.25}
+            rotateOnHover={true}
+            forceHoverState={false}
+          />
+        </div>
         
-        <div className="relative z-10 max-w-5xl mx-auto text-center animate-fade-in">
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80"></div>
+        
+        {/* Elementos Parallax Decorativos */}
+        <div 
+          className="absolute top-1/3 left-10 w-32 h-32 rounded-full bg-gold/5 blur-2xl"
+          style={{ transform: `translateY(${-parallaxSlow}px)` }}
+        />
+        <div 
+          className="absolute top-2/3 right-20 w-40 h-40 rounded-full bg-gold/10 blur-3xl"
+          style={{ transform: `translateY(${-parallaxMedium}px)` }}
+        />
+        <div 
+          className="absolute bottom-1/4 left-1/3 w-24 h-24 rounded-full bg-gold/5 blur-xl"
+          style={{ transform: `translateY(${-parallaxFast}px)` }}
+        />
+      </div>
+
+      {/* Conteúdo Principal - Rola sobre o background */}
+      <main className="relative z-10 min-h-screen text-foreground overflow-x-hidden" role="main">
+        
+        {/* SEÇÃO 1 - HERO */}
+        <section className="relative min-h-screen flex items-center justify-center px-6" aria-labelledby="hero-heading">
+          <div className="relative z-10 max-w-5xl mx-auto text-center animate-fade-in">
           <h1 id="hero-heading" className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
             Se você não usar IA <span className="text-gold">AGORA</span>,<br />
             alguém que usa vai tomar seu mercado.
@@ -59,12 +108,19 @@ const Index = () => {
             Quero entrar agora
           </Button>
           
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-gold to-transparent"></div>
+          {/* Scroll Indicator com Parallax */}
+          <div 
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+            style={{ transform: `translateY(${parallaxFast * 0.5}px)`, opacity: 1 - (parallaxSlow / 200) }}
+          >
+            <div className="w-px h-16 bg-gradient-to-b from-gold to-transparent animate-pulse"></div>
+            <div className="text-gold text-xs uppercase tracking-widest animate-bounce">Scroll</div>
+          </div>
         </div>
       </section>
 
       {/* SEÇÃO 2 - AUTORIDADE */}
-      <section className="py-24 px-6 bg-secondary/30">
+      <section className="py-24 px-6 bg-secondary/20 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-center">
             Por que você deve <span className="text-gold">me ouvir?</span>
@@ -117,7 +173,7 @@ const Index = () => {
       </section>
 
       {/* SEÇÃO 4 - O QUE VOCÊ VAI APRENDER */}
-      <section className="py-24 px-6 bg-secondary/30">
+      <section className="py-24 px-6 bg-secondary/20 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-8 text-center">
             O que você vai <span className="text-gold">aprender</span><br />
@@ -170,7 +226,7 @@ const Index = () => {
       </section>
 
       {/* SEÇÃO 6 - O QUE VOCÊ RECEBE */}
-      <section className="py-24 px-6 bg-secondary/30">
+      <section className="py-24 px-6 bg-secondary/20 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-center">
             O que você <span className="text-gold">recebe</span><br />
@@ -227,7 +283,7 @@ const Index = () => {
       </section>
 
       {/* SEÇÃO 8 - OFERTA */}
-      <section id="pricing" className="py-24 px-6 bg-secondary/30">
+      <section id="pricing" className="py-24 px-6 bg-secondary/20 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-8 text-center">
             Quanto vale ter IA trabalhando por você<br />
@@ -330,19 +386,7 @@ const Index = () => {
       </section>
 
       {/* SEÇÃO 9 - FECHAMENTO */}
-      <section className="py-32 px-6 relative overflow-hidden">
-        {/* Orb Background */}
-        <div className="absolute inset-0 opacity-30">
-          <Orb 
-            hue={0}
-            hoverIntensity={0.4}
-            rotateOnHover={true}
-            forceHoverState={false}
-          />
-        </div>
-        
-        <div className="absolute inset-0 bg-gradient-radial-gold opacity-10 blur-3xl"></div>
-        
+      <section className="py-32 px-6 relative">
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
             Você pode continuar sendo <span className="text-muted-foreground">"mais um"</span>.<br />
@@ -366,7 +410,8 @@ const Index = () => {
           </Button>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 };
 
