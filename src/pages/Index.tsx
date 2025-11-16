@@ -400,7 +400,7 @@ const Index = () => {
           <Button 
             variant="premium" 
             size="xl" 
-            className="text-xl uppercase tracking-wider shadow-glow-gold animate-pulse"
+            className="text-xl uppercase tracking-wider shadow-glow-gold animate-pulse-slow"
             onClick={handleCTA}
             aria-label="Decisão final - Entrar para a comunidade IA agora"
           >
