@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Orb from "@/components/Orb";
 import { useParallax } from "@/hooks/use-parallax";
 import { FloatingParticles } from "@/components/FloatingParticles";
+import BlurText from "@/components/BlurText";
 
 const Index = () => {
   // SEO: Update meta description dynamically
@@ -69,14 +70,31 @@ const Index = () => {
         <section className="relative min-h-screen flex items-center justify-center px-6" aria-labelledby="hero-heading">
           <div className="relative z-10 max-w-5xl mx-auto text-center animate-fade-in">
           <h1 id="hero-heading" className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
-            Se você não usar IA <span className="text-gold">AGORA</span>,<br />
-            alguém que usa vai tomar seu mercado.
+            <BlurText
+              text="Se você não usar IA AGORA, alguém que usa vai tomar seu mercado."
+              delay={50}
+              animateBy="words"
+              direction="top"
+              className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight"
+            />
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            Empresários inteligentes já estão usando IA para vender mais, automatizar processos e multiplicar resultados.<br />
-            <span className="text-foreground/80">Os outros… estão ficando para trás.</span>
-          </p>
+          <div className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+            <BlurText
+              text="Empresários inteligentes já estão usando IA para vender mais, automatizar processos e multiplicar resultados."
+              delay={30}
+              animateBy="words"
+              direction="bottom"
+              className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-2"
+            />
+            <BlurText
+              text="Os outros… estão ficando para trás."
+              delay={30}
+              animateBy="words"
+              direction="bottom"
+              className="text-xl md:text-2xl text-foreground/80 leading-relaxed"
+            />
+          </div>
           
           <Button 
             onClick={handleCTA}
