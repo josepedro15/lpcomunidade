@@ -23,7 +23,7 @@ export const FloatingParticles = () => {
       {particles.map((particle, index) => (
         <div
           key={index}
-          className="absolute rounded-full bg-gold/30 blur-sm animate-pulse"
+          className="absolute rounded-full bg-gold/50 blur-sm animate-pulse"
           style={{
             width: `${particle.size}px`,
             height: `${particle.size}px`,

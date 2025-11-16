@@ -34,50 +34,30 @@ const Index = () => {
       
       {/* Background Parallax Fixo - Sempre Visível */}
       <div className="fixed inset-0 z-0">
-        {/* Layer 1 - Orb Principal (fundo) */}
-        <div className="absolute inset-0 opacity-25">
+        {/* Orb Principal - Único e Mais Visível */}
+        <div className="absolute inset-0 opacity-60">
           <Orb 
             hue={0}
-            hoverIntensity={0.2}
-            rotateOnHover={false}
-            forceHoverState={false}
-          />
-        </div>
-        
-        {/* Layer 2 - Orb Secundário (meio) */}
-        <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] opacity-20">
-          <Orb 
-            hue={10}
             hoverIntensity={0.3}
             rotateOnHover={true}
             forceHoverState={false}
           />
         </div>
         
-        {/* Layer 3 - Orb Terciário (detalhe) */}
-        <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] opacity-15">
-          <Orb 
-            hue={-10}
-            hoverIntensity={0.25}
-            rotateOnHover={true}
-            forceHoverState={false}
-          />
-        </div>
-        
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80"></div>
+        {/* Gradient Overlay - Mais Suave */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/40"></div>
         
         {/* Elementos Parallax Decorativos */}
         <div 
-          className="absolute top-1/3 left-10 w-32 h-32 rounded-full bg-gold/5 blur-2xl"
+          className="absolute top-1/3 left-10 w-32 h-32 rounded-full bg-gold/15 blur-2xl"
           style={{ transform: `translateY(${-parallaxSlow}px)` }}
         />
         <div 
-          className="absolute top-2/3 right-20 w-40 h-40 rounded-full bg-gold/10 blur-3xl"
+          className="absolute top-2/3 right-20 w-40 h-40 rounded-full bg-gold/20 blur-3xl"
           style={{ transform: `translateY(${-parallaxMedium}px)` }}
         />
         <div 
-          className="absolute bottom-1/4 left-1/3 w-24 h-24 rounded-full bg-gold/5 blur-xl"
+          className="absolute bottom-1/4 left-1/3 w-24 h-24 rounded-full bg-gold/15 blur-xl"
           style={{ transform: `translateY(${-parallaxFast}px)` }}
         />
       </div>
@@ -120,7 +100,7 @@ const Index = () => {
       </section>
 
       {/* SEÇÃO 2 - AUTORIDADE */}
-      <section className="py-24 px-6 bg-secondary/20 backdrop-blur-sm">
+      <section className="py-24 px-6 bg-secondary/10 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-center">
             Por que você deve <span className="text-gold">me ouvir?</span>
@@ -173,7 +153,7 @@ const Index = () => {
       </section>
 
       {/* SEÇÃO 4 - O QUE VOCÊ VAI APRENDER */}
-      <section className="py-24 px-6 bg-secondary/20 backdrop-blur-sm">
+      <section className="py-24 px-6 bg-secondary/10 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-8 text-center">
             O que você vai <span className="text-gold">aprender</span><br />
@@ -226,7 +206,7 @@ const Index = () => {
       </section>
 
       {/* SEÇÃO 6 - O QUE VOCÊ RECEBE */}
-      <section className="py-24 px-6 bg-secondary/20 backdrop-blur-sm">
+      <section className="py-24 px-6 bg-secondary/10 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-center">
             O que você <span className="text-gold">recebe</span><br />
@@ -283,7 +263,7 @@ const Index = () => {
       </section>
 
       {/* SEÇÃO 8 - OFERTA */}
-      <section id="pricing" className="py-24 px-6 bg-secondary/20 backdrop-blur-sm">
+      <section id="pricing" className="py-24 px-6 bg-secondary/10 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-8 text-center">
             Quanto vale ter IA trabalhando por você<br />
