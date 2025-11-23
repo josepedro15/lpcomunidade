@@ -34,42 +34,27 @@ export const seoConfig = {
 } as const;
 
 export const pricingPlans = {
-  essencial: {
-    name: "Essencial",
-    price: 49,
+  anual: {
+    name: "Plano Anual",
+    price: 29.9,
     currency: "BRL",
-    description: "Acesso às lives semanais, comunidade exclusiva e conteúdos práticos",
+    description: "Cobrança anual. Melhor custo-benefício.",
     features: [
-      "Acesso às lives semanais",
+      "Lives semanais",
       "Comunidade exclusiva",
       "Conteúdos práticos",
     ],
-  },
-  completo: {
-    name: "Completo",
-    price: 97,
-    currency: "BRL",
-    description:
-      "Tudo do Essencial + templates avançados, tutoriais completos e materiais exclusivos",
-    features: [
-      "Tudo do Essencial",
-      "Templates avançados",
-      "Tutoriais completos",
-      "Materiais exclusivos",
-    ],
     popular: true,
   },
-  premium: {
-    name: "Premium",
-    price: 297,
+  mensal: {
+    name: "Plano Mensal",
+    price: 39.9,
     currency: "BRL",
-    description:
-      "Tudo do Completo + sessões exclusivas, análises de caso e suporte prioritário",
+    description: "Sem fidelidade. Cancele quando quiser.",
     features: [
-      "Tudo do Completo",
-      "Sessões exclusivas",
-      "Análises de caso",
-      "Suporte prioritário",
+      "Lives semanais",
+      "Comunidade exclusiva",
+      "Conteúdos práticos",
     ],
   },
 } as const;
@@ -79,6 +64,7 @@ export const socialLinks = {
   instagram: "https://instagram.com/lpcomunidade",
   linkedin: "https://linkedin.com/company/lpcomunidade",
   twitter: "https://twitter.com/lpcomunidade",
+  whatsappVip: "https://chat.whatsapp.com/SEU_LINK_VIP",
 } as const;
 
 export const structuredData = {

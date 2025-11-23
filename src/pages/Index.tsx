@@ -5,17 +5,15 @@ import Orb from "@/components/Orb";
 import { useParallax } from "@/hooks/use-parallax";
 import { FloatingParticles } from "@/components/FloatingParticles";
 import BlurText from "@/components/BlurText";
+import { seoConfig } from "@/config/seo";
 
 const Index = () => {
   // SEO: Update meta description dynamically
   useEffect(() => {
-    document.title = "IA para Empresários | Domine o Mercado com Inteligência Artificial";
+    document.title = seoConfig.defaultTitle;
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Empresários inteligentes já estão usando IA para vender mais, automatizar processos e multiplicar resultados. Entre para a comunidade exclusiva que domina o mercado com IA."
-      );
+      metaDescription.setAttribute("content", seoConfig.defaultDescription);
     }
   }, []);
 
@@ -293,78 +291,53 @@ const Index = () => {
             <span className="text-foreground">Vai aprender com atalhos, clareza, direção e acompanhamento de quem faz na prática.</span>
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            {/* Plano Essencial */}
-            <div className="p-8 bg-card border border-gold/20 rounded-lg hover:border-gold transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-2">Essencial</h3>
-              <div className="mb-6">
-                <span className="text-5xl font-black text-gold">R$ 49</span>
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
+            <div className="p-8 bg-gradient-to-br from-gold/20 to-gold/5 border-2 border-gold rounded-lg shadow-gold-strong relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-background px-4 py-1 rounded-full text-sm font-bold uppercase">
+                Mais econômico
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Plano Anual</h3>
+              <div className="mb-2">
+                <span className="text-5xl font-black text-gold">R$ 29,90</span>
                 <span className="text-muted-foreground">/mês</span>
               </div>
+              <p className="text-muted-foreground mb-6">Cobrança anual • Melhor custo-benefício</p>
               <ul className="space-y-3 mb-8">
-                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Acesso às lives semanais</li>
+                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Lives semanais</li>
                 <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Comunidade exclusiva</li>
                 <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Conteúdos práticos</li>
               </ul>
               <Button 
-                variant="premiumOutline" 
-                size="lg" 
-                className="w-full" 
-                onClick={handleCTA}
-                aria-label="Assinar plano Essencial - R$ 49 por mês"
-              >
-                Começar Agora
-              </Button>
-            </div>
-            
-            {/* Plano Completo - DESTAQUE */}
-            <div className="p-8 bg-gradient-to-br from-gold/20 to-gold/5 border-2 border-gold rounded-lg shadow-gold-strong transform md:scale-105 relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-background px-4 py-1 rounded-full text-sm font-bold uppercase">
-                Mais Popular
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Completo</h3>
-              <div className="mb-6">
-                <span className="text-5xl font-black text-gold">R$ 97</span>
-                <span className="text-muted-foreground">/mês</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Tudo do Essencial</li>
-                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Templates avançados</li>
-                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Tutoriais completos</li>
-                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Materiais exclusivos</li>
-              </ul>
-              <Button 
+                asChild
                 variant="premium" 
                 size="lg" 
                 className="w-full" 
-                onClick={handleCTA}
-                aria-label="Assinar plano Completo - R$ 97 por mês (Mais Popular)"
+                aria-label="Assinar plano Anual - R$ 29,90 por mês (cobrança anual)"
               >
-                Quero Este Agora
+                <a href="https://pay.kiwify.com.br/o1mubNB" target="_blank" rel="noopener noreferrer">Assinar Anual</a>
               </Button>
             </div>
-            
-            {/* Plano Premium */}
+
             <div className="p-8 bg-card border border-gold/20 rounded-lg hover:border-gold transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-2">Premium</h3>
-              <div className="mb-6">
-                <span className="text-5xl font-black text-gold">R$ 297</span>
+              <h3 className="text-2xl font-bold mb-2">Plano Mensal</h3>
+              <div className="mb-2">
+                <span className="text-5xl font-black text-gold">R$ 39,90</span>
                 <span className="text-muted-foreground">/mês</span>
               </div>
+              <p className="text-muted-foreground mb-6">Sem fidelidade • Cancele quando quiser</p>
               <ul className="space-y-3 mb-8">
-                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Tudo do Completo</li>
-                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Sessões exclusivas</li>
-                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Análises de caso</li>
-                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Suporte prioritário</li>
+                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Lives semanais</li>
+                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Comunidade exclusiva</li>
+                <li className="flex gap-2"><Check className="w-5 h-5 text-gold flex-shrink-0 mt-1" /> Conteúdos práticos</li>
               </ul>
               <Button 
+                asChild
                 variant="premiumOutline" 
                 size="lg" 
                 className="w-full" 
-                onClick={handleCTA}
-                aria-label="Assinar plano Premium VIP - R$ 297 por mês"
+                aria-label="Assinar plano Mensal - R$ 39,90 por mês"
               >
-                Quero VIP
+                <a href="https://pay.kiwify.com.br/rE42c4Y" target="_blank" rel="noopener noreferrer">Assinar Mensal</a>
               </Button>
             </div>
           </div>
