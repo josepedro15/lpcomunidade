@@ -1,5 +1,5 @@
-# robots.txt para LP Comunidade IA
-# https://lpcomunidade.com/robots.txt
+# robots.txt para Comunidade VisionarIA
+# https://visionaria.com.br/robots.txt
 
 # Permitir todos os principais bots
 User-agent: Googlebot
@@ -49,4 +49,4 @@ User-agent: BLEXBot
 Disallow: /
 
 # Sitemaps
-Sitemap: https://lpcomunidade.com/sitemap.xml
+Sitemap: https://visionaria.com.br/sitemap.xml

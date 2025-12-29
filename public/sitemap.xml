@@ -5,19 +5,26 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://lpcomunidade.com/</loc>
-    <lastmod>2025-11-16</lastmod>
+    <loc>https://visionaria.com.br/</loc>
+    <lastmod>2025-12-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Pricing Section -->
   <url>
-    <loc>https://lpcomunidade.com/#pricing</loc>
-    <lastmod>2025-11-16</lastmod>
+    <loc>https://visionaria.com.br/#pricing</loc>
+    <lastmod>2025-12-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-</urlset>
+  <!-- Thank You Page -->
+  <url>
+    <loc>https://visionaria.com.br/obrigado</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
+</urlset>

@@ -4,13 +4,15 @@
  */
 
 export const seoConfig = {
-  siteName: "LP Comunidade IA",
-  siteUrl: "https://lpcomunidade.com",
-  defaultTitle: "IA para Empresários | Domine o Mercado com Inteligência Artificial",
+  siteName: "Comunidade VisionarIA",
+  siteUrl: "https://visionaria.com.br",
+  defaultTitle: "Comunidade VisionarIA | Empresários Visionários Dominam o Mercado com IA",
   defaultDescription:
-    "Empresários inteligentes já estão usando IA para vender mais, automatizar processos e multiplicar resultados. Entre para a comunidade exclusiva que domina o mercado com IA. Lives semanais, templates prontos e estratégias práticas.",
-  author: "LP Comunidade",
+    "Empresários visionários já estão usando IA para vender mais, automatizar processos e multiplicar resultados. Entre para a Comunidade VisionarIA e domine o mercado. Lives semanais, templates prontos e estratégias práticas.",
+  author: "Comunidade VisionarIA",
   keywords: [
+    "comunidade visionaria",
+    "visionaria ia",
     "inteligência artificial",
     "IA para empresários",
     "IA para vendas",
@@ -26,7 +28,7 @@ export const seoConfig = {
     "prompts avançados",
     "IA aplicada",
   ],
-  twitterHandle: "@lpcomunidade",
+  twitterHandle: "@visionaria_ia",
   ogImage: "/og-image.jpg",
   twitterImage: "/twitter-image.jpg",
   locale: "pt_BR",
@@ -60,10 +62,10 @@ export const pricingPlans = {
 } as const;
 
 export const socialLinks = {
-  facebook: "https://facebook.com/lpcomunidade",
-  instagram: "https://instagram.com/lpcomunidade",
-  linkedin: "https://linkedin.com/company/lpcomunidade",
-  twitter: "https://twitter.com/lpcomunidade",
+  facebook: "https://facebook.com/comunidadevisionaria",
+  instagram: "https://instagram.com/visionaria.ia",
+  linkedin: "https://linkedin.com/company/comunidadevisionaria",
+  twitter: "https://twitter.com/visionaria_ia",
   whatsappVip: "https://chat.whatsapp.com/SEU_LINK_VIP",
 } as const;
 
