@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { seoConfig, socialLinks } from "@/config/seo";
 
 const Footer = () => {
@@ -71,12 +72,12 @@ const Footer = () => {
                             © {currentYear} {seoConfig.siteName}. Todos os direitos reservados.
                         </p>
                         <div className="flex gap-6 text-sm">
-                            <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
+                            <Link to="/termos" className="text-muted-foreground hover:text-gold transition-colors">
                                 Termos de Uso
-                            </a>
-                            <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
+                            </Link>
+                            <Link to="/privacidade" className="text-muted-foreground hover:text-gold transition-colors">
                                 Política de Privacidade
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
