@@ -74,7 +74,7 @@ const Index = () => {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight"
+                className="text-3xl md:text-6xl lg:text-7xl font-black leading-tight"
               />
               <br />
               <BlurText
@@ -82,30 +82,30 @@ const Index = () => {
                 delay={50}
                 animateBy="words"
                 direction="top"
-                className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight text-gold"
+                className="text-2xl md:text-5xl lg:text-6xl font-black leading-tight text-gold"
               />
             </h1>
 
-            <div className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
+            <div className="text-lg md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
               <BlurText
                 text="Uma comunidade para quem quer antecipar o futuro, usar Inteligência Artificial de forma prática e criar novas fontes de renda ou acelerar pequenos negócios — mesmo sem ser técnico."
                 delay={30}
                 animateBy="words"
                 direction="bottom"
-                className="text-xl md:text-2xl text-muted-foreground leading-relaxed"
+                className="text-lg md:text-2xl text-muted-foreground leading-relaxed"
               />
             </div>
 
-            <p className="text-lg md:text-xl text-foreground/80 mb-12 flex items-center justify-center gap-2">
+            <p className="text-base md:text-xl text-foreground/80 mb-12 flex flex-col md:flex-row items-center justify-center gap-2">
               <span className="text-2xl">💡</span>
-              <span>Trabalho está ficando escasso. Tecnologia está ficando abundante.</span>
+              <span className="text-center">Trabalho está ficando escasso. Tecnologia está ficando abundante.</span>
             </p>
 
             <Button
               onClick={handleCTA}
               variant="premium"
               size="xl"
-              className="text-xl uppercase tracking-wider animate-scale-in"
+              className="text-lg md:text-xl uppercase tracking-wider animate-scale-in whitespace-normal h-auto py-6 md:py-8 px-6 leading-tight"
               aria-label="Entrar para a comunidade por R$39,90/mês"
             >
               Entrar na Comunidade agora por R$39,90/mês
@@ -425,7 +425,7 @@ const Index = () => {
               onClick={handleCTA}
               variant="premium"
               size="xl"
-              className="text-xl uppercase tracking-wider shadow-glow-gold animate-pulse-slow"
+              className="text-lg md:text-xl uppercase tracking-wider shadow-glow-gold animate-pulse-slow whitespace-normal h-auto py-6 md:py-8 px-6 leading-tight max-w-full"
               aria-label="Decisão final - Entrar para a comunidade agora"
             >
               🚀 Quero entrar na Comunidade por R$39,90/mês
