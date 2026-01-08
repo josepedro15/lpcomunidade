@@ -327,7 +327,7 @@ const Index = () => {
                   className="w-full"
                   aria-label="Assinar plano Anual - R$ 29,90 por mês (cobrança anual)"
                 >
-                  <a href="https://pay.kiwify.com.br/o1mubNB" target="_blank" rel="noopener noreferrer">Assinar Anual</a>
+                  <a href="https://pay.kiwify.com.br/UZ3zUH5" target="_blank" rel="noopener noreferrer">Assinar Anual</a>
                 </Button>
               </div>
 
