@@ -10,7 +10,7 @@ const Footer = () => {
                 {/* Logo e Descrição */}
                 <div className="text-center mb-8">
                     <h3 className="text-2xl font-black text-gold mb-2">
-                        Comunidade Vision<span className="text-foreground">ar</span>IA
+                        Comunidade VisionarIA
                     </h3>
                     <p className="text-muted-foreground max-w-md mx-auto">
                         Empresários visionários usando IA para dominar o mercado.
