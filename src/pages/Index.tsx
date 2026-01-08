@@ -111,14 +111,7 @@ const Index = () => {
               Entrar na Comunidade agora por R$39,90/mês
             </Button>
 
-            {/* Scroll Indicator com Parallax */}
-            <div
-              className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-              style={{ transform: `translateY(${parallaxFast * 0.5}px)`, opacity: 1 - (parallaxSlow / 200) }}
-            >
-              <div className="w-px h-16 bg-gradient-to-b from-gold to-transparent animate-pulse"></div>
-              <div className="text-gold text-xs uppercase tracking-widest animate-bounce">Scroll</div>
-            </div>
+
           </div>
         </section>
 
