@@ -425,7 +425,7 @@ const Index = () => {
               onClick={handleCTA}
               variant="premium"
               size="xl"
-              className="text-lg md:text-xl uppercase tracking-wider shadow-glow-gold animate-pulse-slow whitespace-normal h-auto py-6 md:py-8 px-6 leading-tight max-w-full"
+              className="text-lg md:text-xl uppercase tracking-wider shadow-glow-gold whitespace-normal h-auto py-6 md:py-8 px-6 leading-tight max-w-full"
               aria-label="Decisão final - Entrar para a comunidade agora"
             >
               🚀 Quero entrar na Comunidade por R$39,90/mês
